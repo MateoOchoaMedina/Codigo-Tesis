@@ -173,13 +173,12 @@ est_varcov_coefs <- function(mX, mSg, vz){
   # (I_11 gorro)^(-1) + (I_11 gorro)^(-1) (I_12 gorro) (I_22.1 gorro)^(-1)
   # (I_21 gorro) (I_11 gorro)^(-1)
   varcov_gorro <- iI11g + iI11g %*% I12g %*% iI22.1g %*% I21g %*% iI11g
-  # dimnames(varcov_gorro) <- list(paste0("beta_", expand.grid(1:ncol(mX), 1:ncol(mSg))),
-  #                                paste0("beta_", 1:ncol(mX), 1:ncol(mSg)))
   # Retorna de la matriz de informacion de Fisher el bloque correspondiente a la
   # estimacion de las varianzas y covarianzas asintoticas de los coeficientes de
   # regresion estimados   
   return(varcov_gorro)
 }
+
 
 
 
